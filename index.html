@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RK Sports & Athletics Club</title>
+<link rel="icon" type="image/jpeg" href="https://github.com/rksports/rksports.github.io/blob/0f02dbf610e2614eab20114267f12ec0b297803b/rksports.jpg?raw=true">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -11,9 +12,30 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{
     font-family:'Poppins',sans-serif;
-    background:black;
+    background:#0a0a0a;
     color:white;
-    scroll-behavior:smooth;
+    overflow-x:hidden;
+}
+
+/* INTRO */
+#intro{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:black;
+    z-index:2000;
+    font-size:30px;
+    color:cyan;
+    letter-spacing:3px;
+    animation:fadeOut 1s ease forwards;
+    animation-delay:1.5s;
+}
+
+@keyframes fadeOut{
+    to{opacity:0;visibility:hidden}
 }
 
 /* NAV */
@@ -23,17 +45,17 @@ nav{
     display:flex;
     justify-content:center;
     align-items:center;
-    padding:10px;
-    background:rgba(0,0,0,0.7);
+    padding:12px;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(10px);
     z-index:1000;
 }
-nav img{width:50px;margin-right:10px}
-nav h1{font-size:20px}
+nav img{width:50px;margin-right:10px;filter:drop-shadow(0 0 10px cyan)}
+nav h1{text-shadow:0 0 10px cyan}
 
 /* HERO */
 .hero{
     height:100vh;
-    background:url('https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?q=80&w=2070') no-repeat center/cover;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -42,26 +64,27 @@ nav h1{font-size:20px}
 }
 
 .hero h2{
-    font-size:40px;
+    font-size:42px;
+    text-shadow:0 0 20px cyan,0 0 40px magenta;
     margin-bottom:20px;
-    text-shadow:0 0 20px cyan;
 }
 
 .register-btn{
-    padding:15px 30px;
+    padding:15px 35px;
     font-size:18px;
     border:none;
-    border-radius:10px;
-    background:linear-gradient(45deg,cyan,magenta);
-    color:black;
+    border-radius:12px;
+    background:transparent;
+    color:white;
+    border:2px solid cyan;
+    box-shadow:0 0 15px cyan, inset 0 0 10px cyan;
     cursor:pointer;
-    box-shadow:0 0 20px cyan;
     transition:0.3s;
 }
 
 .register-btn:hover{
     transform:scale(1.1);
-    box-shadow:0 0 30px magenta;
+    box-shadow:0 0 25px magenta, inset 0 0 15px magenta;
 }
 
 .section{
@@ -69,28 +92,39 @@ nav h1{font-size:20px}
     text-align:center;
 }
 
-/* EVENTS */
+/* EVENTS GRID */
 .events{
-    display:flex;
-    overflow-x:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
     gap:20px;
-    padding:20px;
+    margin-top:30px;
 }
 
 .event-card{
-    min-width:250px;
-    background:#111;
-    border-radius:15px;
     padding:20px;
+    border-radius:15px;
+    background:#111;
     box-shadow:0 0 15px cyan;
+    transition:0.3s;
+}
+
+.event-card:hover{
+    transform:translateY(-10px) scale(1.05);
+    box-shadow:0 0 25px magenta;
 }
 
 /* IMAGES */
-.center-img{
+.glow-img{
     width:80%;
     max-width:600px;
     border-radius:15px;
-    box-shadow:0 0 25px magenta;
+    box-shadow:0 0 25px cyan,0 0 40px magenta;
+    transition:0.3s;
+}
+
+.glow-img:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 40px magenta,0 0 60px cyan;
 }
 
 .profile{
@@ -106,6 +140,12 @@ nav h1{font-size:20px}
     width:250px;
     border-radius:15px;
     box-shadow:0 0 25px cyan;
+    transition:0.3s;
+}
+
+.profile img:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 35px magenta;
 }
 
 .profile-text{
@@ -124,22 +164,18 @@ footer{
 
 <body>
 
-<script>
-alert("Namaskaram! Welcome to RK Sports & Athletics Club 🏆");
-</script>
+<div id="intro">Namaskaram</div>
 
 <nav>
 <img src="https://github.com/rksports/rksports.github.io/blob/0f02dbf610e2614eab20114267f12ec0b297803b/rksports.jpg?raw=true">
 <h1>RK Sports & Athletics Club</h1>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
 <h2>Train Hard. Win Strong.</h2>
 <button class="register-btn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdq4o-MWjN9Ze8YQzYzFA66syoOJmmnOMVYviVncFVgIu16RA/viewform')">Register Now</button>
 </div>
 
-<!-- EVENTS -->
 <div class="section">
 <h2>Events</h2>
 <div class="events">
@@ -155,35 +191,31 @@ alert("Namaskaram! Welcome to RK Sports & Athletics Club 🏆");
 </div>
 </div>
 
-<!-- BOARD -->
 <div class="section">
-<img class="center-img" src="https://github.com/rksports/rksports.github.io/blob/0f02dbf610e2614eab20114267f12ec0b297803b/Board%20Of%20Members.jpg?raw=true">
+<img class="glow-img" src="https://github.com/rksports/rksports.github.io/blob/0f02dbf610e2614eab20114267f12ec0b297803b/Board%20Of%20Members.jpg?raw=true">
 <h2>Board Of Members</h2>
 </div>
 
-<!-- KASI SIR -->
 <div class="section">
 <h2>Head Coach - Kasi Rao</h2>
 <div class="profile">
 <div class="profile-text">
-<p>Kasi Rao is a highly experienced athletic trainer and passionate sports mentor with years of dedication in the field of athletics. He has trained individuals across various age groups, including national-level athletes. He is also an NCC and Scouts & Guides coach with extensive experience. Well-versed in throws, running, and jumping events, he has guided numerous students to achieve excellence. Kasi Sir himself is a former national-level player in multiple athletic events.</p>
+<p>Kasi Rao is a highly experienced athletic trainer and passionate sports mentor with years of dedication in athletics. He has trained individuals across age groups including national-level athletes. He is also an NCC and Scouts & Guides coach with extensive experience. Skilled in throws, running, and jumping events, he has guided numerous athletes to excellence. He himself is a former national-level athlete.</p>
 </div>
 <img src="https://github.com/rksports/rksports.github.io/blob/0f02dbf610e2614eab20114267f12ec0b297803b/Kasi%20Sir%20Portrait.jpeg?raw=true">
 </div>
 </div>
 
-<!-- MURALI SIR -->
 <div class="section">
 <h2>Coach - Murali Sir</h2>
 <div class="profile">
 <img src="https://github.com/rksports/rksports.github.io/blob/aadb430ff91b79916bfc74cefff19d7d1f7c55e7/Murali%20Sir%20Portrait.jpeg?raw=true">
 <div class="profile-text">
-<p>Murali Sir is a skilled sports trainer with extensive experience in volleyball, kabaddi, and inline skating. He has trained many national-level athletes and is a champion in various state-level competitions. His expertise and dedication make him an exceptional coach in multiple sports disciplines.</p>
+<p>Murali Sir is a skilled trainer with years of experience in volleyball, kabaddi, and inline skating. He has trained national-level athletes and is a champion in state-level competitions. His expertise makes him a powerful mentor in multiple sports disciplines.</p>
 </div>
 </div>
 </div>
 
-<!-- CONTACT -->
 <div class="section">
 <h2>Contact & Location</h2>
 <p>📍 Open Ground, 4th Cross Rd, Green Woods Layout, Varanasi, Bengaluru, Karnataka 560036</p>
