@@ -10,77 +10,200 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Poppins',sans-serif;background:#0a0a0a;color:white;overflow-x:hidden}
 
-.bg{
-position:fixed;width:100%;height:100%;
-background:url('https://github.com/rksports/rksports.github.io/blob/235eb0d5593c482bb3462db2bda76e9a15b6aa59/background.jpg?raw=true') center/cover no-repeat;
-opacity:0.8;z-index:-1;transition:0.5s;
+body{
+    font-family:'Poppins',sans-serif;
+    background:#000;
+    color:white;
+    overflow-x:hidden;
 }
 
+/* BACKGROUND */
+.bg{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:url('https://github.com/rksports/rksports.github.io/blob/235eb0d5593c482bb3462db2bda76e9a15b6aa59/background.jpg?raw=true') center/cover no-repeat;
+    opacity:0.8;
+    z-index:-1;
+    transition:0.5s;
+}
+
+/* INTRO */
 #intro{
-position:fixed;width:100%;height:100vh;display:flex;justify-content:center;align-items:center;
-background:black;z-index:2000;font-size:30px;color:cyan;
-animation:fadeOut 1s ease forwards;animation-delay:1.5s;
+    position:fixed;
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:black;
+    z-index:2000;
+    font-size:32px;
+    color:cyan;
+    text-shadow:0 0 20px cyan,0 0 40px magenta;
+    animation:fadeOut 1s ease forwards;
+    animation-delay:1.5s;
 }
 @keyframes fadeOut{to{opacity:0;visibility:hidden}}
 
+/* NAV */
 nav{
-position:fixed;width:100%;display:flex;justify-content:space-between;align-items:center;
-padding:10px 30px;background:rgba(0,0,0,0.6);backdrop-filter:blur(10px);z-index:1000;
+    position:fixed;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 30px;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(10px);
+    z-index:1000;
 }
-nav img{width:45px;margin-right:10px;filter:drop-shadow(0 0 10px cyan)}
+
+nav img{
+    width:50px;
+    margin-right:10px;
+    filter:drop-shadow(0 0 15px cyan);
+}
+
+nav h1{
+    text-shadow:0 0 15px cyan,0 0 30px magenta;
+}
+
 nav .left{display:flex;align-items:center}
-nav h1{text-shadow:0 0 10px cyan}
-nav a{color:white;margin:0 10px;text-decoration:none}
 
-.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center}
-.hero h2{font-size:42px;text-shadow:0 0 20px cyan;margin-bottom:20px}
-
-.register-btn{
-padding:15px 35px;border-radius:12px;background:transparent;
-color:white;border:2px solid cyan;box-shadow:0 0 15px cyan;cursor:pointer;
+nav a{
+    margin:0 10px;
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+nav a:hover{
+    color:cyan;
+    text-shadow:0 0 10px cyan;
 }
 
-.section{padding:80px 20px;text-align:center}
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
 
+.hero h2{
+    font-size:45px;
+    text-shadow:0 0 25px cyan,0 0 50px magenta;
+    margin-bottom:20px;
+}
+
+/* BUTTON */
+.register-btn{
+    padding:15px 35px;
+    font-size:18px;
+    border-radius:12px;
+    background:transparent;
+    color:white;
+    border:2px solid cyan;
+    box-shadow:0 0 20px cyan, inset 0 0 15px cyan;
+    cursor:pointer;
+    transition:0.3s;
+}
+.register-btn:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 30px magenta, inset 0 0 20px magenta;
+}
+
+/* SECTION */
+.section{
+    padding:80px 20px;
+    text-align:center;
+}
+
+/* EVENTS */
 .events{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;margin-top:30px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
 }
 
 .event-card{
-padding:20px;border-radius:15px;background:#111;
-box-shadow:0 0 15px cyan;
+    padding:20px;
+    border-radius:15px;
+    background:#111;
+    box-shadow:0 0 20px cyan;
+    transition:0.3s;
+}
+.event-card:hover{
+    transform:translateY(-10px) scale(1.05);
+    box-shadow:0 0 35px magenta;
 }
 
+/* IMAGES */
 .glow-img{
-width:80%;max-width:600px;border-radius:15px;
-box-shadow:0 0 25px cyan;
+    width:80%;
+    max-width:600px;
+    border-radius:15px;
+    box-shadow:0 0 30px cyan,0 0 50px magenta;
+    transition:0.3s;
+}
+.glow-img:hover{
+    transform:scale(1.05);
 }
 
+/* PROFILE */
 .profile{
-display:flex;align-items:center;justify-content:center;
-gap:40px;flex-wrap:wrap;margin-top:30px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+    gap:40px;
 }
 
-.profile img{width:250px;border-radius:15px;box-shadow:0 0 25px cyan}
-.profile-text{max-width:500px;text-align:left}
+.profile img{
+    width:250px;
+    border-radius:15px;
+    box-shadow:0 0 30px cyan;
+    transition:0.3s;
+}
+.profile img:hover{
+    box-shadow:0 0 40px magenta;
+    transform:scale(1.08);
+}
 
+.profile-text{
+    max-width:500px;
+    text-align:left;
+}
+
+/* MUSIC BUTTON */
 .music-btn{
-position:fixed;bottom:20px;right:20px;
-background:black;padding:10px 15px;border-radius:50%;
-cursor:pointer;box-shadow:0 0 15px cyan;
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:black;
+    padding:12px;
+    border-radius:50%;
+    cursor:pointer;
+    box-shadow:0 0 20px cyan;
 }
 
-footer{padding:20px;text-align:center;background:#111}
+/* FOOTER */
+footer{
+    padding:20px;
+    text-align:center;
+    background:#111;
+    font-size:12px;
+    opacity:0.7;
+}
 </style>
 </head>
 
 <body>
 
 <div class="bg" id="bg"></div>
+
 <div id="intro">Namaskaram</div>
 
 <nav>
@@ -96,12 +219,14 @@ footer{padding:20px;text-align:center;background:#111}
 </nav>
 
 <audio id="bgmusic" loop>
-<source src="https://github.com/rksports/rksports.github.io/blob/235eb0d5593c482bb3462db2bda76e9a15b6aa59/alexgrohl-energetic-action-sport-500409.mp3?raw=true">
+<source src="https://github.com/rksports/rksports.github.io/blob/235eb0d5593c482bb3462db2bda76e9a15b6aa59/alexgrohl-energetic-action-sport-500409.mp3?raw=true" type="audio/mp3">
 </audio>
 
 <div class="hero">
 <h2>Train Hard. Win Strong.</h2>
-<button class="register-btn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdq4o-MWjN9Ze8YQzYzFA66syoOJmmnOMVYviVncFVgIu16RA/viewform')">Register Now</button>
+<button class="register-btn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdq4o-MWjN9Ze8YQzYzFA66syoOJmmnOMVYviVncFVgIu16RA/viewform')">
+Register Now
+</button>
 </div>
 
 <div class="section" id="events">
@@ -119,38 +244,34 @@ footer{padding:20px;text-align:center;background:#111}
 </div>
 </div>
 
-<!-- BOARD -->
 <div class="section">
 <img class="glow-img" src="https://github.com/rksports/rksports.github.io/blob/0f02dbf610e2614eab20114267f12ec0b297803b/Board%20Of%20Members.jpg?raw=true">
 <h2>Board Of Members</h2>
 </div>
 
-<!-- KASI -->
 <div class="section" id="kasi">
 <h2>Head Coach - Kasi Rao</h2>
 <div class="profile">
 <div class="profile-text">
-<p>Kasi Rao is a highly experienced athletic trainer and passionate sports mentor with years of dedication in athletics. He has trained individuals across age groups including national-level athletes.</p>
+<p>Kasi Rao is a highly experienced athletic trainer who has trained national-level athletes.</p>
 </div>
 <img src="https://github.com/rksports/rksports.github.io/blob/0f02dbf610e2614eab20114267f12ec0b297803b/Kasi%20Sir%20Portrait.jpeg?raw=true">
 </div>
 </div>
 
-<!-- MURALI -->
 <div class="section">
 <h2>Coach - Murali Sir</h2>
 <div class="profile">
 <img src="https://github.com/rksports/rksports.github.io/blob/aadb430ff91b79916bfc74cefff19d7d1f7c55e7/Murali%20Sir%20Portrait.jpeg?raw=true">
 <div class="profile-text">
-<p>Murali Sir is a skilled trainer with years of experience in volleyball, kabaddi, and inline skating.</p>
+<p>Murali Sir is an experienced trainer in volleyball, kabaddi and skating.</p>
 </div>
 </div>
 </div>
 
-<!-- CONTACT -->
 <div class="section" id="contact">
 <h2>Contact & Location</h2>
-<p>📍 Open Ground, 4th Cross Rd, Green Woods Layout, Varanasi, Bengaluru, Karnataka 560036</p>
+<p>📍 Open Ground, 4th Cross Rd, Green Woods Layout, Bengaluru</p>
 <p>📞 +91 876 060 9159</p>
 <p>📧 kasisiva379@gmail.com</p>
 </div>
@@ -158,35 +279,32 @@ footer{padding:20px;text-align:center;background:#111}
 <div class="music-btn" onclick="toggleMusic()">🔊</div>
 
 <footer>
-<p style="font-size:12px;opacity:0.7">
 Website designed by Red Dragon Studios<br>
-Music sourced from Pixabay. We do not own the music.<br>
-© Red Dragon Studios
-</p>
+Music sourced from Pixabay (not owned)
 </footer>
 
 <script>
 let music=document.getElementById("bgmusic");
 let btn=document.querySelector(".music-btn");
 
-window.addEventListener("load",()=>{
-music.play().catch(()=>{
-document.body.addEventListener("click",()=>music.play(),{once:true});
-});
-});
+/* STRONGEST AUTOPLAY ATTEMPT */
+window.onload=()=>{
+    let playPromise=music.play();
+    if(playPromise!==undefined){
+        playPromise.catch(()=>{
+            setInterval(()=>{music.play();},2000);
+        });
+    }
+};
 
 function toggleMusic(){
-if(music.muted){
-music.muted=false;btn.innerHTML="🔊";
-}else{
-music.muted=true;btn.innerHTML="🔇";
-}
+    music.muted=!music.muted;
+    btn.innerHTML=music.muted?"🔇":"🔊";
 }
 
 window.addEventListener("scroll",()=>{
 let bg=document.getElementById("bg");
-if(window.scrollY>200){bg.style.opacity="0.5"}
-else{bg.style.opacity="0.8"}
+bg.style.opacity=window.scrollY>200?"0.5":"0.8";
 });
 </script>
 
