@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RK Sports & Athletics Club</title>
-<link rel="icon" type="image/jpeg" href="https://github.com/rksports/rksports.github.io/blob/0f02dbf610e2614eab20114267f12ec0b297803b/rksports.jpg?raw=true">
 
+<link rel="icon" type="image/jpeg" href="https://github.com/rksports/rksports.github.io/blob/0f02dbf610e2614eab20114267f12ec0b297803b/rksports.jpg?raw=true">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -15,6 +15,17 @@ body{
     background:#0a0a0a;
     color:white;
     overflow-x:hidden;
+}
+
+/* BACKGROUND */
+.bg{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:url('https://github.com/rksports/rksports.github.io/blob/235eb0d5593c482bb3462db2bda76e9a15b6aa59/background.jpg?raw=true') center/cover no-repeat;
+    opacity:0.8;
+    z-index:-1;
+    transition:0.5s;
 }
 
 /* INTRO */
@@ -33,34 +44,37 @@ body{
     animation:fadeOut 1s ease forwards;
     animation-delay:1.5s;
 }
-
-@keyframes fadeOut{
-    to{opacity:0;visibility:hidden}
-}
+@keyframes fadeOut{to{opacity:0;visibility:hidden}}
 
 /* NAV */
 nav{
     position:fixed;
     width:100%;
     display:flex;
-    justify-content:center;
+    justify-content:space-between;
     align-items:center;
-    padding:12px;
+    padding:10px 30px;
     background:rgba(0,0,0,0.6);
     backdrop-filter:blur(10px);
     z-index:1000;
 }
-nav img{width:50px;margin-right:10px;filter:drop-shadow(0 0 10px cyan)}
+nav .left{display:flex;align-items:center}
+nav img{width:45px;margin-right:10px;filter:drop-shadow(0 0 10px cyan)}
 nav h1{text-shadow:0 0 10px cyan}
+nav .menu a{
+    margin:0 10px;
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+nav .menu a:hover{color:cyan}
 
-/* HERO */
 .hero{
     height:100vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    text-align:center;
 }
 
 .hero h2{
@@ -81,18 +95,10 @@ nav h1{text-shadow:0 0 10px cyan}
     cursor:pointer;
     transition:0.3s;
 }
+.register-btn:hover{transform:scale(1.1);box-shadow:0 0 25px magenta}
 
-.register-btn:hover{
-    transform:scale(1.1);
-    box-shadow:0 0 25px magenta, inset 0 0 15px magenta;
-}
+.section{padding:80px 20px;text-align:center}
 
-.section{
-    padding:80px 20px;
-    text-align:center;
-}
-
-/* EVENTS GRID */
 .events{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -107,24 +113,13 @@ nav h1{text-shadow:0 0 10px cyan}
     box-shadow:0 0 15px cyan;
     transition:0.3s;
 }
+.event-card:hover{transform:translateY(-10px) scale(1.05);box-shadow:0 0 25px magenta}
 
-.event-card:hover{
-    transform:translateY(-10px) scale(1.05);
-    box-shadow:0 0 25px magenta;
-}
-
-/* IMAGES */
 .glow-img{
     width:80%;
     max-width:600px;
     border-radius:15px;
     box-shadow:0 0 25px cyan,0 0 40px magenta;
-    transition:0.3s;
-}
-
-.glow-img:hover{
-    transform:scale(1.05);
-    box-shadow:0 0 40px magenta,0 0 60px cyan;
 }
 
 .profile{
@@ -140,43 +135,54 @@ nav h1{text-shadow:0 0 10px cyan}
     width:250px;
     border-radius:15px;
     box-shadow:0 0 25px cyan;
-    transition:0.3s;
 }
 
-.profile img:hover{
-    transform:scale(1.08);
-    box-shadow:0 0 35px magenta;
+.profile-text{max-width:500px;text-align:left}
+
+/* MUSIC BUTTON */
+.music-btn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:black;
+    padding:10px 15px;
+    border-radius:50%;
+    cursor:pointer;
+    box-shadow:0 0 15px cyan;
 }
 
-.profile-text{
-    max-width:500px;
-    text-align:left;
-}
-
-footer{
-    padding:20px;
-    text-align:center;
-    background:#111;
-}
-
+footer{padding:20px;text-align:center;background:#111}
 </style>
 </head>
 
 <body>
 
+<div class="bg" id="bg"></div>
+
 <div id="intro">Namaskaram</div>
 
 <nav>
+<div class="left">
 <img src="https://github.com/rksports/rksports.github.io/blob/0f02dbf610e2614eab20114267f12ec0b297803b/rksports.jpg?raw=true">
 <h1>RK Sports & Athletics Club</h1>
+</div>
+<div class="menu">
+<a href="#events">About</a>
+<a href="#kasi">Instructors</a>
+<a href="#contact">Contact</a>
+</div>
 </nav>
+
+<audio id="bgmusic" autoplay loop>
+<source src="https://github.com/rksports/rksports.github.io/blob/235eb0d5593c482bb3462db2bda76e9a15b6aa59/alexgrohl-energetic-action-sport-500409.mp3?raw=true" type="audio/mp3">
+</audio>
 
 <div class="hero">
 <h2>Train Hard. Win Strong.</h2>
 <button class="register-btn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdq4o-MWjN9Ze8YQzYzFA66syoOJmmnOMVYviVncFVgIu16RA/viewform')">Register Now</button>
 </div>
 
-<div class="section">
+<div class="section" id="events">
 <h2>Events</h2>
 <div class="events">
 <div class="event-card">Shot Put</div>
@@ -196,7 +202,7 @@ footer{
 <h2>Board Of Members</h2>
 </div>
 
-<div class="section">
+<div class="section" id="kasi">
 <h2>Head Coach - Kasi Rao</h2>
 <div class="profile">
 <div class="profile-text">
@@ -211,21 +217,37 @@ footer{
 <div class="profile">
 <img src="https://github.com/rksports/rksports.github.io/blob/aadb430ff91b79916bfc74cefff19d7d1f7c55e7/Murali%20Sir%20Portrait.jpeg?raw=true">
 <div class="profile-text">
-<p>Murali Sir is a skilled trainer with years of experience in volleyball, kabaddi, and inline skating. He has trained national-level athletes and is a champion in state-level competitions. His expertise makes him a powerful mentor in multiple sports disciplines.</p>
+<p>Murali Sir is a skilled trainer with years of experience in volleyball, kabaddi, and inline skating. He has trained national-level athletes and is a champion in state-level competitions.</p>
 </div>
 </div>
 </div>
 
-<div class="section">
+<div class="section" id="contact">
 <h2>Contact & Location</h2>
 <p>📍 Open Ground, 4th Cross Rd, Green Woods Layout, Varanasi, Bengaluru, Karnataka 560036</p>
-<p>📞 +91 866 060 9159</p>
-<p>📧 kasisiva373@gmail.com</p>
+<p>📞 +91 876 060 9159</p>
+<p>📧 kasisiva379@gmail.com</p>
 </div>
+
+<div class="music-btn" onclick="toggleMusic()">🔊</div>
 
 <footer>
 <p>© 2026 RK Sports & Athletics Club</p>
 </footer>
+
+<script>
+let music=document.getElementById("bgmusic");
+function toggleMusic(){
+    if(music.paused){music.play();}
+    else{music.pause();}
+}
+
+window.addEventListener("scroll",()=>{
+    let bg=document.getElementById("bg");
+    if(window.scrollY>200){bg.style.opacity="0.5"}
+    else{bg.style.opacity="0.8"}
+});
+</script>
 
 </body>
 </html>
