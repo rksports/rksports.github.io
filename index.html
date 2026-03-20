@@ -51,6 +51,8 @@ body{
 /* NAV */
 nav{
     position:fixed;
+    top:0;
+    left:0;
     width:100%;
     display:flex;
     justify-content:space-between;
@@ -69,6 +71,7 @@ nav img{
 
 nav h1{
     text-shadow:0 0 15px cyan,0 0 30px magenta;
+    font-size:20px;
 }
 
 nav .left{display:flex;align-items:center}
@@ -86,12 +89,13 @@ nav a:hover{
 
 /* HERO */
 .hero{
-    height:100vh;
+    min-height:100vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    text-align:center; /* Center text for phones */
+    text-align:center;
+    padding:0 20px;
 }
 
 .hero h2{
@@ -187,6 +191,38 @@ footer{
     font-size:12px;
     opacity:0.7;
 }
+
+/* RESPONSIVE FIXES */
+@media (max-width:768px){
+    nav{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+    nav h1{
+        font-size:16px;
+    }
+    nav img{
+        width:40px;
+    }
+    .hero h2{
+        font-size:26px;
+        line-height:1.4;
+    }
+    .register-btn{
+        font-size:16px;
+        padding:12px 25px;
+    }
+    .profile{
+        flex-direction:column;
+        gap:20px;
+    }
+    .profile-text{
+        text-align:center;
+    }
+    .glow-img{
+        width:100%;
+    }
+}
 </style>
 </head>
 
@@ -249,15 +285,4 @@ Register Now
 </div>
 
 <div class="section">
-<h2>Coach - Murali Sir</h2>
-<div class="profile">
-<img src="https://github.com/rksports/rksports.github.io/blob/aadb430ff91b79916bfc74cefff19d7d1f7c55e7/Murali%20Sir%20Portrait.jpeg?raw=true">
-<div class="profile-text">
-<p>Murali Sir is a skilled trainer with years of experience in volleyball, kabaddi, and inline skating. He has trained national-level athletes and is a champion in state-level competitions.</p>
-</div>
-</div>
-</div>
-
-<div class="section" id="contact">
-<h2>Contact & Location</h2>
-<p>📍 Open Ground, 4th Cross Rd, Green Woods Layout
+<h2>Coach - Mur
