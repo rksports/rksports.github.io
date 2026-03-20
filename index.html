@@ -5,58 +5,120 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RK Sports & Athletics Club</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to right, #ff512f, #dd2476);
-    color: white;
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+    font-family:'Poppins',sans-serif;
+    background:black;
+    color:white;
+    scroll-behavior:smooth;
 }
 
-header {
-    text-align: center;
-    padding: 20px;
+/* NAV */
+nav{
+    position:fixed;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:10px;
+    background:rgba(0,0,0,0.7);
+    z-index:1000;
+}
+nav img{width:50px;margin-right:10px}
+nav h1{font-size:20px}
+
+/* HERO */
+.hero{
+    height:100vh;
+    background:url('https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?q=80&w=2070') no-repeat center/cover;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
 }
 
-header img {
-    width: 120px;
+.hero h2{
+    font-size:40px;
+    margin-bottom:20px;
+    text-shadow:0 0 20px cyan;
 }
 
-h1 {
-    margin: 10px 0;
+.register-btn{
+    padding:15px 30px;
+    font-size:18px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(45deg,cyan,magenta);
+    color:black;
+    cursor:pointer;
+    box-shadow:0 0 20px cyan;
+    transition:0.3s;
 }
 
-.section {
-    padding: 30px;
-    text-align: center;
+.register-btn:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 30px magenta;
 }
 
-.card {
-    background: rgba(255,255,255,0.1);
-    padding: 20px;
-    margin: 15px;
-    border-radius: 15px;
+.section{
+    padding:80px 20px;
+    text-align:center;
 }
 
-button {
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-    background: black;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
+/* EVENTS */
+.events{
+    display:flex;
+    overflow-x:auto;
+    gap:20px;
+    padding:20px;
 }
 
-button:hover {
-    background: #333;
+.event-card{
+    min-width:250px;
+    background:#111;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 0 15px cyan;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    background: rgba(0,0,0,0.3);
+/* IMAGES */
+.center-img{
+    width:80%;
+    max-width:600px;
+    border-radius:15px;
+    box-shadow:0 0 25px magenta;
 }
+
+.profile{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.profile img{
+    width:250px;
+    border-radius:15px;
+    box-shadow:0 0 25px cyan;
+}
+
+.profile-text{
+    max-width:500px;
+    text-align:left;
+}
+
+footer{
+    padding:20px;
+    text-align:center;
+    background:#111;
+}
+
 </style>
 </head>
 
@@ -66,52 +128,71 @@ footer {
 alert("Namaskaram! Welcome to RK Sports & Athletics Club 🏆");
 </script>
 
-<header>
-    <img src="https://github.com/redragonstudio/rksports.github.io/blob/main/WhatsApp%20Image%202026-03-14%20at%208.08.03%20PM.jpeg?raw=true">
-    <h1>RK Sports & Athletics Club</h1>
-    <p>Train Hard. Win Strong.</p>
-</header>
+<nav>
+<img src="https://github.com/rksports/rksports.github.io/blob/0f02dbf610e2614eab20114267f12ec0b297803b/rksports.jpg?raw=true">
+<h1>RK Sports & Athletics Club</h1>
+</nav>
 
-<div class="section">
-    <h2>About Us</h2>
-    <div class="card">
-        <p>RK Sports & Athletics Club is a professional sports training club based in Bangalore. Founded by experienced athlete and coach Kasi Rao Sir, along with Murali Sir, a dedicated skating coach, the club focuses on developing young talent into strong athletes.</p>
-    </div>
+<!-- HERO -->
+<div class="hero">
+<h2>Train Hard. Win Strong.</h2>
+<button class="register-btn" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdq4o-MWjN9Ze8YQzYzFA66syoOJmmnOMVYviVncFVgIu16RA/viewform')">Register Now</button>
 </div>
 
+<!-- EVENTS -->
 <div class="section">
-    <h2>Events We Offer</h2>
-    <div class="card">
-        <p><b>Throws:</b> Shot Put, Discus Throw, Javelin Throw</p>
-        <p><b>Running:</b> 100m, 200m, Sprint Training</p>
-        <p><b>Jumps:</b> High Jump, Long Jump, Triple Jump</p>
-        <p><b>Other:</b> Skating</p>
-    </div>
+<h2>Events</h2>
+<div class="events">
+<div class="event-card">Shot Put</div>
+<div class="event-card">Discus Throw</div>
+<div class="event-card">Javelin Throw</div>
+<div class="event-card">100m Sprint</div>
+<div class="event-card">200m Sprint</div>
+<div class="event-card">High Jump</div>
+<div class="event-card">Long Jump</div>
+<div class="event-card">Triple Jump</div>
+<div class="event-card">Skating</div>
+</div>
 </div>
 
+<!-- BOARD -->
 <div class="section">
-    <h2>Location</h2>
-    <div class="card">
-        <p>Open Ground, 4th Cross Rd, Green Woods Layout, Varanasi, Bengaluru, Karnataka 560036</p>
-    </div>
+<img class="center-img" src="https://github.com/rksports/rksports.github.io/blob/0f02dbf610e2614eab20114267f12ec0b297803b/Board%20Of%20Members.jpg?raw=true">
+<h2>Board Of Members</h2>
 </div>
 
+<!-- KASI SIR -->
 <div class="section">
-    <h2>Contact</h2>
-    <div class="card">
-        <p>Coach: Kasi Rao Sir</p>
-        <p>Phone: +91 876 060 9159</p>
-        <p>Email: kasisiva379@gmail.com</p>
-    </div>
+<h2>Head Coach - Kasi Rao</h2>
+<div class="profile">
+<div class="profile-text">
+<p>Kasi Rao is a highly experienced athletic trainer and passionate sports mentor with years of dedication in the field of athletics. He has trained individuals across various age groups, including national-level athletes. He is also an NCC and Scouts & Guides coach with extensive experience. Well-versed in throws, running, and jumping events, he has guided numerous students to achieve excellence. Kasi Sir himself is a former national-level player in multiple athletic events.</p>
+</div>
+<img src="https://github.com/rksports/rksports.github.io/blob/0f02dbf610e2614eab20114267f12ec0b297803b/Kasi%20Sir%20Portrait.jpeg?raw=true">
+</div>
 </div>
 
+<!-- MURALI SIR -->
 <div class="section">
-    <h2>Register Now</h2>
-    <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdq4o-MWjN9Ze8YQzYzFA66syoOJmmnOMVYviVncFVgIu16RA/viewform')">Register</button>
+<h2>Coach - Murali Sir</h2>
+<div class="profile">
+<img src="https://github.com/rksports/rksports.github.io/blob/aadb430ff91b79916bfc74cefff19d7d1f7c55e7/Murali%20Sir%20Portrait.jpeg?raw=true">
+<div class="profile-text">
+<p>Murali Sir is a skilled sports trainer with extensive experience in volleyball, kabaddi, and inline skating. He has trained many national-level athletes and is a champion in various state-level competitions. His expertise and dedication make him an exceptional coach in multiple sports disciplines.</p>
+</div>
+</div>
+</div>
+
+<!-- CONTACT -->
+<div class="section">
+<h2>Contact & Location</h2>
+<p>📍 Open Ground, 4th Cross Rd, Green Woods Layout, Varanasi, Bengaluru, Karnataka 560036</p>
+<p>📞 +91 866 060 9159</p>
+<p>📧 kasisiva373@gmail.com</p>
 </div>
 
 <footer>
-    <p>© 2026 RK Sports & Athletics Club</p>
+<p>© 2026 RK Sports & Athletics Club</p>
 </footer>
 
 </body>
